@@ -2,13 +2,14 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import WaterMark from 'watermark-component-for-react';
 
-const HtmlTable = ({ data, tableRef, parseCol }) => {
+const HtmlTable = ({ data, tableRef, title }) => {
   const content = `🪙 Dr.Provision🪙`;
 
   return (
     <>
-      <div className='mx-auto'>
+      <div className='mx-auto' key={new Date().getTime()}>
         <div className="my-5 flex flex-col text-center" style={{ backgroundColor: '#d6d6d6'}} ref={tableRef}>
+          <div>{title}</div>
           <div className='mb-2.5'>{ data.date }</div>
             <WaterMark content={content} font='40px Microsoft Yahei'>
               <table className="w-full text-sm text-left text-black-50">
@@ -34,7 +35,7 @@ const HtmlTable = ({ data, tableRef, parseCol }) => {
                         >
                           {
                             row.map((col, i) => (
-                              <td className='p-2.5 text-center' key={col}>{parseCol(col, i)}</td>
+                              <td className='p-2.5 text-center' key={col}>{col}</td>
                             ))
                           }
                         </tr>

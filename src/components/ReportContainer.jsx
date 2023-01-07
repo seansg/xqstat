@@ -6,7 +6,7 @@ import CSVReader from 'react-csv-reader'
 
 import HtmlTable from './HtmlTable'
 
-const ReportContainer = ({ data, csv, filename, handleParseCSV, parseCol }) => {
+const ReportContainer = ({ data, csv, title, filename, handleParseCSV }) => {
   const tableRef = useRef(null)
 
   const handleDownloadImage = useCallback(async () => {
@@ -26,12 +26,12 @@ const ReportContainer = ({ data, csv, filename, handleParseCSV, parseCol }) => {
     } else {
       window.open(data);
     }
-  }, [filename])
+  }, [data, filename])
 
 
   const handleParse = useCallback(() => {
     handleParseCSV(csv.split("\n").map(row => row.split(",")))
-  }, [handleParseCSV])
+  }, [handleParseCSV, csv, title])
 
   return (
     <div className="flex justify-content-center flex-col">
@@ -47,7 +47,7 @@ const ReportContainer = ({ data, csv, filename, handleParseCSV, parseCol }) => {
         <button className='px-5 py-2.5 bg-[#1da1f2] text-white rounded' onClick={handleDownloadImage}>to JEPG</button>
       </div>
 
-      <HtmlTable data={data} tableRef={tableRef} parseCol={parseCol}/>
+      <HtmlTable data={data} tableRef={tableRef} title={title}/>
     </div>
   )
 }

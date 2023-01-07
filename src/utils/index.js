@@ -15,3 +15,5 @@ export const kdTrans = (kd) => {
       return `高檔鈍化`
   }
 }
+
+export const renameWaveCol = '漲跌幅%'
