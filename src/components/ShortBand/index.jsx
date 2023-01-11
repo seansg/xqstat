@@ -4,10 +4,10 @@ import csv from '../../data/shortBand'
 import { kdTrans, renameWaveCol } from '../../utils'
 
 const ShortBand = ({ data, setData }) => {
-  const parseCol = (col, index) => {
+  const parseCol = (col, index, row) => {
     switch (index) {
       case 5: {
-        return kdTrans(col)
+        return kdTrans(col, row[3])
       }
       default: {
         return col.replace('.TW', '')
@@ -26,7 +26,7 @@ const ShortBand = ({ data, setData }) => {
         return header
       }),
       rows: newData.map((row) => {
-        return row.map((col, i) => parseCol(col, i))
+        return row.map((col, i) => parseCol(col, i, row))
       })
     })
   }

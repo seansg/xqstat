@@ -4,7 +4,7 @@ import csv from '../../data/valueInvesting'
 import { renameWaveCol } from '../../utils'
 
 const ValueInvesting = ({ data, setData }) => {
-  const parseCol = (col, index) => {
+  const parseCol = (col, index, row) => {
     switch (index) {
       default: {
         return col.replace('.TW', '')
@@ -23,7 +23,7 @@ const ValueInvesting = ({ data, setData }) => {
         return header
       }),
       rows: newData.map((row) => {
-        return row.map((col, i) => parseCol(col, i))
+        return row.map((col, i) => parseCol(col, i, row))
       })
     })
   }
