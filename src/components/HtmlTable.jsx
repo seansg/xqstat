@@ -8,7 +8,7 @@ const HtmlTable = ({ data, tableRef, title }) => {
   return (
     <>
       <div className='mx-auto' key={new Date().getTime()}>
-        <div className="my-5 flex flex-col text-center" style={{ backgroundColor: '#d6d6d6'}} ref={tableRef}>
+        <div className="flex flex-col text-center" style={{ backgroundColor: '#d6d6d6'}} ref={tableRef}>
           <div>{title}</div>
           <div className='mb-2.5'>{ data.date }</div>
             <WaterMark content={content} font='40px Microsoft Yahei'>
