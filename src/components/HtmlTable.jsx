@@ -1,4 +1,3 @@
-import cx from 'classnames'
 import PropTypes from 'prop-types'
 import WaterMark from 'watermark-component-for-react';
 
@@ -25,14 +24,7 @@ const HtmlTable = ({ data, tableRef, title }) => {
                 <tbody>
                     {
                       data.rows.map((row, index) => (
-                        <tr key={index} className={
-                          cx('border-b', {
-                            'bg-red-600 text-white': row[7] === '多',
-                            'text-red-600': row[7] === '偏多',
-                            'text-green-600': row[7] === '偏空',
-                            'bg-green-600 text-white': row[7] === '空',
-                          })}
-                        >
+                        <tr key={index} className={data.rowClass && data.rowClass[index]}>
                           {
                             row.map((col, i) => (
                               <td className='p-2.5 text-center' key={col}>{col}</td>

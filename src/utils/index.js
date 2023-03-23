@@ -38,3 +38,5 @@ export const kdTrans = (kd, direction) => {
 }
 
 export const renameWaveCol = '幅度%'
+
+export const renamePriceCol = '收盤價'

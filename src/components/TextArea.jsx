@@ -1,5 +1,5 @@
 
-const TextArea = ({ inputRef, defaultValue }) => {
+const TextArea = ({ inputRef }) => {
   return (
     <textarea
       ref={inputRef}
@@ -22,7 +22,6 @@ const TextArea = ({ inputRef, defaultValue }) => {
       "
       rows="10"
       style={{  height: '85vh' }}
-      defaultValue={defaultValue.current}
     ></textarea>
   )
 }
