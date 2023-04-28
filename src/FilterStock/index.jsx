@@ -12,17 +12,17 @@ const initData = {
   rows: [[]],
 }
 
-const App = () => {
+const FilterStock = () => {
   const [data, setData] = useState(initData)
 
   return (
     <>
       <div className="grid grid-cols-2 divide-x">
         <TableDownloader data={data} />
-        <ParseCsv setData={setData}/>
+        <ParseCsv setData={setData} />
       </div>
     </>
   )
 }
 
-export default App
+export default FilterStock
