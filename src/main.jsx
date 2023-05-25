@@ -6,6 +6,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import CashDirect from './CashDirect';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/filter-stock",
     element: <FilterStock />,
+  },
+  {
+    path: "/cash-direct",
+    element: <CashDirect />,
   },
 ]);
 

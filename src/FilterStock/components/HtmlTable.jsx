@@ -1,18 +1,27 @@
 import PropTypes from 'prop-types'
-import WaterMark from 'watermark-component-for-react';
+import { useState } from 'react'
+import WaterMarkProvider from '%/components/WaterMarkProvider'
 
 const HtmlTable = ({ data, tableRef, title }) => {
-  const content = `🪙 Dr.Provision🪙`;
+  const [selectTitle, setSelectTitle] = useState('')
 
   return (
     <>
+      <select onChange={(e) => setSelectTitle(e.target.value)}>
+        <option></option>
+        <option>激戰區-百元</option>
+        <option>激戰區-非百元</option>
+        <option>上班族首選-多排</option>
+        <option>成長型-價投</option>
+      </select>
       <div className='mx-auto' key={new Date().getTime()}>
         <div className="flex flex-col text-center" style={{ backgroundColor: '#d6d6d6'}} ref={tableRef}>
-          <div>{title}</div>
+          <div>{title} {selectTitle}</div>
           <div className='mb-2.5'>{ data.date }</div>
-            <WaterMark content={content} font='40px Microsoft Yahei'>
+
+          <WaterMarkProvider>
               <table className="w-full text-sm text-left text-black-50">
-                <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
+              <thead className='text-xs text-white uppercase bg-gray-50 dark:bg-gray-700'>
                   <tr>
                     {
                       data.headers.map((header) => (
@@ -35,7 +44,7 @@ const HtmlTable = ({ data, tableRef, title }) => {
                     }
                 </tbody>
               </table>
-          </WaterMark>
+          </WaterMarkProvider>
           <div className='flex justify-end mb-2'>
             <span>方向搭配技術分析僅供參考，盈虧自負。</span>
           </div>

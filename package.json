@@ -10,14 +10,18 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.13",
+    "chart.js": "^4.3.0",
     "classnames": "^2.3.2",
+    "decimal.js": "^10.4.3",
     "html2canvas": "^1.4.1",
     "localforage": "^1.10.0",
     "lodash": "^4.17.21",
     "match-sorter": "^6.3.1",
+    "papaparse": "^5.4.1",
     "postcss": "^8.4.19",
     "react": "^18.2.0",
     "react-base-table": "^1.13.2",
+    "react-chartjs-2": "^5.2.0",
     "react-csv-reader": "^3.5.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
@@ -26,6 +30,7 @@
     "watermark-component-for-react": "^1.0.0"
   },
   "devDependencies": {
+    "@rollup/plugin-dsv": "^3.0.2",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",

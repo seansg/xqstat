@@ -3,6 +3,7 @@ import _ from 'lodash'
 import html2canvas from 'html2canvas';
 
 import HtmlTable from './HtmlTable'
+import PngBtn from '%/components/WaterMarkProvider/PngBtn'
 
 const TableDownloader = ({ data }) => {
   const tableRef = useRef(null)
@@ -28,9 +29,7 @@ const TableDownloader = ({ data }) => {
 
   return (
     <div className="flex justify-content-center flex-col">
-      <div className='m-2.5'>
-        <button className='px-5 py-2.5 bg-[#1da1f2] text-white rounded' onClick={handleDownloadImage}>to JEPG</button>
-      </div>
+      <PngBtn onClick={handleDownloadImage} />
       <HtmlTable data={data} tableRef={tableRef} title={data.title}/>
     </div>
   )
